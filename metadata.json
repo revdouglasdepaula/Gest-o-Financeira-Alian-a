@@ -1,0 +1,8 @@
+{
+  "name": "Gestao Financeira",
+  "description": "Sistema de Gestão Financeira IPB.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

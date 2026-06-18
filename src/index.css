@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer utilities {
+  /* Print Layout controls */
+  @media print {
+    @page {
+      size: A4 portrait;
+      margin: 0.8cm;
+    }
+
+    body {
+      background-color: white !important;
+      color: black !important;
+      font-size: 9pt !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    
+    .no-print, 
+    header, 
+    footer, 
+    button, 
+    select, 
+    form,
+    .no-print * {
+      display: none !important;
+    }
+
+    .print-only {
+      display: block !important;
+    }
+
+    table {
+      width: 100% !important;
+      max-width: 100% !important;
+      table-layout: auto !important;
+      font-size: 7.5pt !important;
+      border-collapse: collapse !important;
+    }
+
+    th, td {
+      border: 1px solid #cbd5e1 !important;
+      padding: 3px 5px !important;
+      color: black !important;
+      background: transparent !important;
+    }
+
+    th {
+      font-weight: bold !important;
+      background-color: #f1f5f9 !important;
+    }
+
+    thead tr {
+      background-color: #e2e8f0 !important;
+    }
+
+    /* Keep the visual grid lines in the output */
+    tr {
+      page-break-inside: avoid;
+    }
+
+    #print-area-documento,
+    #print-area-geral-documento {
+      border: none !important;
+      box-shadow: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+  }
+
+  /* Custom styling scrollbars and grids */
+  .print-only {
+    display: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  /* PDF & A4 Page Styling */
+  .pdf-page {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  @media print {
+    .pdf-page {
+      border: none !important;
+      box-shadow: none !important;
+      background-color: white !important;
+      padding: 0 !important;
+      margin: 0 0 20mm 0 !important;
+      page-break-after: always !important;
+      break-after: page !important;
+    }
+    .pdf-page:last-child {
+      page-break-after: avoid !important;
+      break-after: avoid !important;
+      margin-bottom: 0 !important;
+    }
+  }
+}
+
