@@ -122,12 +122,12 @@ export default function Header({
         <div className="flex overflow-x-auto space-x-1 py-1 no-scrollbar leading-none">
           {[
             { id: 'dashboard', label: 'Painel Central', icon: BarChart3 },
-            { id: 'dizimistas', label: 'Dizimistas', icon: Users, visible: currentUser?.perfil !== 'consulta' },
+            { id: 'dizimistas', label: 'Dizimistas', icon: Users },
             { id: 'meses', label: 'Módulos Mensais', icon: CalendarDays },
             { id: 'geral', label: 'Consolidação Geral', icon: Landmark },
             { id: 'presbiterio', label: 'Relatório ao Presbitério', icon: Receipt },
             { id: 'acessos', label: 'Controle de Acessos', icon: KeyRound, visible: isAdmin || currentUser?.perfil === 'tesoureiro' },
-            { id: 'config', label: 'Configurações', icon: Settings, visible: currentUser?.perfil !== 'consulta' },
+            { id: 'config', label: 'Configurações', icon: Settings },
           ]
           .filter(tab => tab.visible !== false)
           .map((tab) => {
